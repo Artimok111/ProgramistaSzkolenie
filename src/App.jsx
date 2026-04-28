@@ -3,8 +3,7 @@ import Dashboard from "./Dashboard";
 import "./App.css";
 
 function App() {
-  // TODO: podepnij ten stan do przycisku i kontenera (Faza 2)
-  const [isDark, setIsDark] = useState(false);
+  // const [isDark, setIsDark] = useState(false);
 
   return (
     <div className="app-container">
