@@ -1,0 +1,260 @@
+/* ===== Zmienne kolorów ===== */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #555;
+  --accent: #4361ee;
+  --accent-hover: #3a0ca3;
+  --border: #d0d7e3;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  --income: #10B981;
+  --expense: #EF4444;
+}
+
+/* ===== Tryb ciemny — gotowy do użycia! ===== */
+.dark {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --border: #30363d;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Layout aplikacji ===== */
+.app-container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ===== Przyciski ===== */
+.btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn-dark-toggle {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.btn-dark-toggle:hover {
+  background-color: var(--text-muted);
+  color: var(--surface);
+}
+
+/* ===== Kontener treści ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* ===== Nagłówek strony z selektorem miesiąca ===== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.month-display {
+  padding: 8px 20px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 600;
+  min-width: 160px;
+  text-align: center;
+  color: var(--text);
+  transition: background-color 0.3s;
+}
+
+/* ===== Siatka kart statystyk ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Karta statystyki ===== */
+.stat-card {
+  background-color: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  border-left: 4px solid var(--accent);
+  transition: background-color 0.3s;
+}
+
+.stat-card--income {
+  border-left-color: var(--income);
+}
+
+.stat-card--expense {
+  border-left-color: var(--expense);
+}
+
+.stat-card__title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.stat-card__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-card__value--income {
+  color: var(--income);
+}
+
+.stat-card__value--expense {
+  color: var(--expense);
+}
+
+.stat-card__subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ===== Karta z podziałem na kategorie ===== */
+.card {
+  background-color: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  transition: background-color 0.3s;
+}
+
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* ===== Lista kategorii ===== */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.category-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.category-name {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.category-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.category-amount {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.category-amount.income {
+  color: var(--income);
+}
+
+.category-amount.expense {
+  color: var(--expense);
+}
+
+/* ===== Komunikat braku danych ===== */
+.no-data {
+  text-align: center;
+  padding: 32px 0;
+  color: var(--text-muted);
+}
