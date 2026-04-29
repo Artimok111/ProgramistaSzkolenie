@@ -25,7 +25,12 @@ function Dashboard() {
     const newMonthYear = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     setMonthYear(newMonthYear);
   };
-
+function getMothod(summary){
+  if(summary > 50) return "masz 50 kasy"
+  if(summary > 40) return "masz dopiero kasy"
+  if(summary > 30) return "masz wiencej kasy"
+  if(summary > 20) return "masz wiencej kasy"
+}
   const summary = mockBudgetData[monthYear];
 
   return (
@@ -64,6 +69,7 @@ function Dashboard() {
               title="Oszczędności"
               value={`${summary.savingsRate.toFixed(1)}%`}
               subtitle={summary.net >= 0 ? 'Świetna robota! 🎉' : 'Nie poddawaj się! 💪'}
+              subtitle={getMothod(summary.savingsRate)}
             />
           </div>
 
